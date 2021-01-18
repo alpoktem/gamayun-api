@@ -1,0 +1,3 @@
+[submodule "mt-api"]
+	path = mt-api
+	url = https://github.com/translatorswb/twb-mt-fastapi
