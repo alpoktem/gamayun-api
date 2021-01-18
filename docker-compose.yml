@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  mt_api:
+    build: ./twb-mt-fastapi
+    command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+    ports:
+      - 8001:8000
+    environment:
+      - MT_API_CONFIG=/app/config.json
+      - MT_API_DEVICE=cpu
+      - MT_API_THREADS=16
+      - CAST_SERVICE_HOST_URL=http://cast_service:8000/api/v1/casts/
+
